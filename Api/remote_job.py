@@ -13,18 +13,22 @@ if res.status_code == 200:
      with st.container(border=True):
            cols = st.columns([3,1])
            for k,v in i.items():
-                if k not in ["slug","id","epoch","date","company_logo","tags","description","apply_url","logo","verified"]:
+                if k not in ["slug","id","epoch","company_logo","tags","description","apply_url","logo","verified"]:
                      with cols[0]:
+                          if k == "date":
+                              timestamp =v
+                              dt = datetime.fromisoformat(timestamp)
+                              st.write(dt.strftime("%B %d, %Y at %H:%M"))
                           if k == 'position':
-                              st.write(f'##### {v}')
+                              st.write(f'#### {v}')
                           elif k == 'salary_min':
                               st.write(f'###### Min-Salary:',f'{v}')
                           elif k == 'salary_max':
                               st.write(f'###### Max-Salary:',f'{v}')
                           elif k == 'company':
-                              st.write(f' {k}',f'{v}')
+                              st.write(f'###### {k}:',f'{v}')
                      with cols[1]:
                           if k ==  "url":
                               st.link_button('Visit Job Website',k,type='primary')
                           elif k == 'location':                            
-                              st.write(f'###### {k.title()}:',f'{v}')
+                              st.write(f' {k.title()}:',f'{v}')
