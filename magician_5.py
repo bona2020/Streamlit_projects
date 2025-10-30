@@ -1,11 +1,11 @@
 # To install streamlit Library:
     # pip install streamlit 
     #To Verify:
-    #   python 'import streamlit; print(streamlit.__version__)'
+    #   python -c 'import streamlit; print(streamlit.__version__)'
     # or streamlit hello
 # To install requests Library:
     # pip install requests
-    # To Verify python 'import requests; print(requests.__version__)'
+    # To Verify python -c 'import requests; print(requests.__version__)'
 #==========================================================
 import streamlit as st
 import requests 
