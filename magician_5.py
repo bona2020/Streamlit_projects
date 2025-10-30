@@ -9,7 +9,7 @@
 #==========================================================
 import streamlit as st
 import requests 
-res = requests.get('http://answerbook.david888.com/?lang=en')
+res = requests.get('https://m8b.gamerselimiko.workers.dev')
 if res.status_code == 200:
     answer = res.json()
     title= st.title('The Magician')
